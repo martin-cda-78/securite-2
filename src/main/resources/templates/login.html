@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Identification</title>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="/webjars/bootstrap-icons/1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+	<div th:if="${param.error}">Nom et mot de passe invalides.</div>
+	<div th:if="${param.logout}">Vous avez été déconnecté.</div>
+	<div class="col-md6 offset-3">
+	<div class = "card"  style="width: 18rem;"> 
+	<div class="card-header text-white bg-secondary mb-3">Identifiez vous svp</div>
+	<div class="card-body">
+		<form th:action="@{/login}" method="post">
+			<div ><!-- <div class="row g-3 align-items-center"> -->
+				<label for="username" class="form-label">Nom :</label>
+				<input type="text" class ="form-control" name="username" placeholder="Identifiant" />
+			</div>
+			<div >
+				<label for="password" class="form-label">Mot de passe :</label>
+				<input type="password" class ="form-control" name="password" placeholder="Mot de passe" />
+			</div>
+			<br><button type="submit" class="btn btn-primary">Validez</button> 
+		</form>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
